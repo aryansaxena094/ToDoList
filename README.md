@@ -4,7 +4,7 @@ This is a basic web application for a To-Do list using the Node.js framework, Ex
 ## Project Setup
 
 Clone this repository to your local machine using:
-`git clone https://github.com/<username>/<repository-name>.git`
+`git clone https://github.com/aryansaxena094/ToDoList.git`
 
 1. Once cloned, navigate to the project directory and install the required dependencies using:
 `npm install`
