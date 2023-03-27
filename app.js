@@ -1,20 +1,22 @@
 const portnum = 4999;
 const express = require("express");
 const bodyParser = require("body-parser");
-var item = "";
+var items = [];
 
 const app = express();
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(express.static("public"));
 
 app.set("view engine","ejs");
 
 app.get("/", function(req, res){
     day = new Date().toLocaleString('en-us',{weekday:'long'});
-    res.render("list", {weekday: day, newListItem: item});
+    res.render("list", {weekday: day, newListItems: items});
 });
 
 app.post("/", function(req, res){
-    item = req.body.newItem;
+    var item = req.body.newItem;
+    items.push(item);
     res.redirect("/");
 });
 
